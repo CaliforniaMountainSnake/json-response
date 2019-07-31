@@ -10,7 +10,7 @@ Edit your project's `composer.json` file to require `californiamountainsnake/jso
     "name": "yourproject/yourproject",
     "type": "project",
     "require": {
-        "php": "^7.3.1",
+        "php": "^7.1",
         "californiamountainsnake/json-response": "*"
     }
 }
@@ -27,6 +27,5 @@ composer require californiamountainsnake/json-response
 ```php
 <?php
 use CaliforniaMountainSnake\JsonResponse\JsonResponse;
-use Symfony\Component\HttpFoundation\Response;
-return JsonResponse::error(['error_1', 'error_2', 'error_3'], Response::HTTP_BAD_REQUEST)->make();
+return JsonResponse::error(['error_1', 'error_2', 'error_3'], JsonResponse::HTTP_BAD_REQUEST)->make();
 ```
