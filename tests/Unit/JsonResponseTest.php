@@ -24,9 +24,20 @@ class JsonResponseTest extends TestCase
     /**
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      */
+    public function testDefaultNoHeadersRequest(): void
+    {
+        $jr = JsonResponse::good(['test']);
+
+        // Content-Type: application/json is in the every response.
+        $this->assertSame(\count($jr->getHeaders()), 1);
+    }
+
+    /**
+     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
+     */
     public function testHeaders(): void
     {
         $jr = JsonResponse::good(['test'])->withCors()->headers(['custom_name' => 'custom_value']);
-        $this->assertSame(\count($jr->getHeaders()), 4);
+        $this->assertSame(\count($jr->getHeaders()), 5);
     }
 }

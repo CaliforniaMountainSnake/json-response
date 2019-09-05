@@ -9,9 +9,9 @@ use Illuminate\Http\Response;
  */
 class JsonResponse implements HttpCodes
 {
-    public const IS_OK  = 'is_ok';
+    public const IS_OK = 'is_ok';
     public const ERRORS = 'errors';
-    public const BODY   = 'body';
+    public const BODY = 'body';
 
     /**
      * @var bool
@@ -40,20 +40,23 @@ class JsonResponse implements HttpCodes
 
     /**
      * JsonResponse constructor.
-     * @param int $_http_code
-     * @param array $errors
+     *
+     * @param int        $_http_code
+     * @param array      $errors
      * @param array|null $body
      */
     public function __construct(int $_http_code, array $errors = [], array $body = null)
     {
-        $this->isOk     = true;
+        $this->isOk = true;
         $this->httpCode = $_http_code;
-        $this->errors   = $errors;
-        $this->body     = $body;
+        $this->errors = $errors;
+        $this->body = $body;
 
         if (!empty($errors)) {
             $this->isOk = false;
         }
+
+        $this->withApplicationJson();
     }
 
     /**
@@ -76,6 +79,7 @@ class JsonResponse implements HttpCodes
      * Add custom headers to the response.
      *
      * @param string[] $_headers Array with headers ['header_name' => 'header_value']
+     *
      * @return JsonResponse
      */
     public function headers(array $_headers): self
@@ -99,7 +103,8 @@ class JsonResponse implements HttpCodes
 
     /**
      * @param array $body
-     * @param int $_http_code
+     * @param int   $_http_code
+     *
      * @return JsonResponse
      */
     public static function good(array $body, int $_http_code = 200): self
@@ -109,7 +114,8 @@ class JsonResponse implements HttpCodes
 
     /**
      * @param array $errors
-     * @param int $_http_code
+     * @param int   $_http_code
+     *
      * @return JsonResponse
      */
     public static function error(array $errors, int $_http_code = 400): self
@@ -150,6 +156,22 @@ class JsonResponse implements HttpCodes
     public function __debugInfo(): array
     {
         return $this->toArray();
+    }
+
+    //------------------------------------------------------------------------------------------------------------------
+
+    /**
+     * Add "Content-Type: application/json" header to the response.
+     *
+     * @return JsonResponse
+     */
+    private function withApplicationJson(): self
+    {
+        $this->headers([
+            'Content-Type' => 'application/json',
+        ]);
+
+        return $this;
     }
 
     //------------------------------------------------------------------------------------------------------------------
