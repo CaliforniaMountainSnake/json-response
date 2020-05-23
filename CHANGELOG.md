@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Security
 
 
+## [1.0.4] - 2020-05-23
+### Fixed
+- Fixed "illuminate/http" dependency.
+
 ## [1.0.3] - 2020-05-23
 ### Added
 - Added Travis-CI integration.
@@ -31,6 +35,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Minimal php version was reduced to 7.1.
 - Updated the Composer dependencies.
 
+[1.0.4]: https://github.com/CaliforniaMountainSnake/json-response/compare/1.0.3...1.0.4
 [1.0.3]: https://github.com/CaliforniaMountainSnake/json-response/compare/1.0.2...1.0.3
 [1.0.2]: https://github.com/CaliforniaMountainSnake/json-response/compare/1.0.1...1.0.2
 [1.0.1]: https://github.com/CaliforniaMountainSnake/json-response/compare/fc1c036571c27213de85d7c21a447144bc4947b1...1.0.1
