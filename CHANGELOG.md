@@ -11,6 +11,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Security
 
 
+## [1.0.5] - 2020-05-23
+### Fixed
+- Fixed "illuminate/http" dependency.
+- composer.lock has been deleted from the repository.
+
 ## [1.0.4] - 2020-05-23
 ### Fixed
 - Fixed "illuminate/http" dependency.
@@ -35,6 +40,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Minimal php version was reduced to 7.1.
 - Updated the Composer dependencies.
 
+[1.0.5]: https://github.com/CaliforniaMountainSnake/json-response/compare/1.0.4...1.0.5
 [1.0.4]: https://github.com/CaliforniaMountainSnake/json-response/compare/1.0.3...1.0.4
 [1.0.3]: https://github.com/CaliforniaMountainSnake/json-response/compare/1.0.2...1.0.3
 [1.0.2]: https://github.com/CaliforniaMountainSnake/json-response/compare/1.0.1...1.0.2

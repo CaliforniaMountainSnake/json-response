@@ -3,3 +3,4 @@
 /.env
 /REFACTORING.md
 /vendor/
+/composer.lock
