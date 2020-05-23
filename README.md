@@ -1,5 +1,8 @@
 # json-response
-A simple object for creating api responses
+
+[![Build Status](https://travis-ci.com/CaliforniaMountainSnake/json-response.svg?branch=master)](https://travis-ci.com/CaliforniaMountainSnake/json-response)
+
+A simple object for creating api responses.
 
 ## Install:
 ### Require this package with Composer
